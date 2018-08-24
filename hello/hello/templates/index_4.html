@@ -1,0 +1,25 @@
+$def with(results)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    function del(id){
+        if(confirm("确认删除吗？")){
+            location="/delete?Id="+id
+        }
+    }
+</script>
+<body>
+<table align="center" width="600" border="1">
+<tr align="center"><td>序列</td><td>姓名</td><td>密码</td><td>特长</td>
+<td>操作(<a href="/hello_3">添加</a>)</td></tr>
+$for test in results:
+    <tr align="center"><td>$test.Id<td>$test.user<td>$test.pwd<td>$test.tc</td>
+        <td><a href="javascript:void(0)" onclick="del($test.Id)">删除</a>
+            <a href="/toupdate?Id=$test.Id">修改</a></td></tr>
+</table>
+</body>
+</html>

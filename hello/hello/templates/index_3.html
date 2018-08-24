@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    function go(){
+        if(kk.user.value==""){
+        alert("姓名不能为空!")
+        }else if(kk.pwd.value==""){
+        alert("密码不能为空!")
+        }else{
+        kk.submit()
+        }
+    }
+</script>
+<body>
+<form name="kk" method="post" action="/hello_4">
+    姓名：<input type="text" name="user"><br>
+    密码：<input type="password" name="pwd"><br>
+    特长：<input type="checkbox" name="tc" value="武术">武术
+    <input type="checkbox" name="tc" value="唱歌">唱歌
+    <input type="checkbox" name="tc" value="跳舞">跳舞
+    <input type="checkbox" name="tc" value="跑步">跑步<br>
+    <input type="button" value="登录" onclick="go()">
+</form>
+</body>
+</html>
